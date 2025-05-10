@@ -1,11 +1,12 @@
 <!DOCTYPE html><html lang="vi">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yến Nhi - Dạy nhạc</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       margin: 0;
       padding: 0;
       background: #fdfdfd;
@@ -14,7 +15,7 @@
       align-items: center;
     }
     header {
-      background-color: #0077cc;
+      background-color: #f48fb1;
       color: white;
       padding: 10px 20px;
       display: flex;
@@ -67,14 +68,14 @@
     .button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #0077cc;
+      background-color: #f48fb1;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       margin-top: 15px;
     }
     .name {
-      color: #0077cc;
+      color: #f48fb1;
       font-weight: bold;
     }
     ul {
@@ -94,13 +95,66 @@
       background-color: #eee;
     }
     .note-box {
-      background: #eef;
+      background: #ffeef4;
       padding: 10px;
       margin: 15px auto;
-      border-left: 5px solid #0077cc;
+      border-left: 5px solid #f48fb1;
       width: fit-content;
     }
   </style>
+
+<style>
+  body {
+    background: url('https://i.pinimg.com/originals/7d/8f/e3/7d8fe3ae13b44d9a6fa487b6b7082d5e.jpg') center/cover no-repeat fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .music-note {
+    position: fixed;
+    font-size: 24px;
+    animation: flyUp 5s linear infinite;
+    color: #f06292;
+    opacity: 0.8;
+  }
+
+  @keyframes flyUp {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0.5; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+  }
+
+  /* Side menu moe style */
+  .side-menu {
+    background-color: #ffe3ec;
+    color: #5c1a38;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-menu a {
+    color: #d81b60;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .side-menu a:hover {
+    color: #880e4f;
+    transform: scale(1.05);
+  }
+</style>
+<script>
+  // Generate flying notes
+  setInterval(() => {
+    const note = document.createElement('div');
+    note.className = 'music-note';
+    note.innerText = '♪';
+    note.style.left = Math.random() * 100 + 'vw';
+    note.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 5000);
+  }, 600);
+</script>
+
 </head>
 <body>
   <header>
@@ -122,6 +176,7 @@
     <h2>Giới thiệu</h2>
     <p>Mình là Yến Nhi - một người yêu âm nhạc, thích sáng tạo và chia sẻ. Mình chơi guitar, piano, trống và rất đam mê dạy nhạc cho người mới bắt đầu.</p>
     <p>Bên cạnh đó, mình là co-founder của <strong>VYN.EDU</strong>, nơi mình cùng bạn bè xây dựng một cộng đồng học nhạc tích cực, thân thiện.</p>
+    <img src="">
     <a href="#" class="button" onclick="showPage('home')">Quay về trang chủ</a>
   </section>  <section class="contact-section" id="contact">
     <h2>Liên hệ</h2>
@@ -235,6 +290,59 @@
       background-color: #ecf0f1;
     }
   </style>
+
+<style>
+  body {
+    background: url('https://i.pinimg.com/originals/7d/8f/e3/7d8fe3ae13b44d9a6fa487b6b7082d5e.jpg') center/cover no-repeat fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .music-note {
+    position: fixed;
+    font-size: 24px;
+    animation: flyUp 5s linear infinite;
+    color: #f06292;
+    opacity: 0.8;
+  }
+
+  @keyframes flyUp {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0.5; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+  }
+
+  /* Side menu moe style */
+  .side-menu {
+    background-color: #ffe3ec;
+    color: #5c1a38;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-menu a {
+    color: #d81b60;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .side-menu a:hover {
+    color: #880e4f;
+    transform: scale(1.05);
+  }
+</style>
+<script>
+  // Generate flying notes
+  setInterval(() => {
+    const note = document.createElement('div');
+    note.className = 'music-note';
+    note.innerText = '♪';
+    note.style.left = Math.random() * 100 + 'vw';
+    note.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 5000);
+  }, 600);
+</script>
+
 </head>
 <body>
 
@@ -327,6 +435,59 @@
       border-radius: 3px;
     }
   </style>
+
+<style>
+  body {
+    background: url('https://i.pinimg.com/originals/7d/8f/e3/7d8fe3ae13b44d9a6fa487b6b7082d5e.jpg') center/cover no-repeat fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .music-note {
+    position: fixed;
+    font-size: 24px;
+    animation: flyUp 5s linear infinite;
+    color: #f06292;
+    opacity: 0.8;
+  }
+
+  @keyframes flyUp {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0.5; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+  }
+
+  /* Side menu moe style */
+  .side-menu {
+    background-color: #ffe3ec;
+    color: #5c1a38;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-menu a {
+    color: #d81b60;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .side-menu a:hover {
+    color: #880e4f;
+    transform: scale(1.05);
+  }
+</style>
+<script>
+  // Generate flying notes
+  setInterval(() => {
+    const note = document.createElement('div');
+    note.className = 'music-note';
+    note.innerText = '♪';
+    note.style.left = Math.random() * 100 + 'vw';
+    note.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 5000);
+  }, 600);
+</script>
+
 </head>
 <body>
 <span class="back-btn" onclick="showPage('class')">← Trở về danh sách</span>
@@ -426,7 +587,7 @@
     pre {
       background: #e1e1e1;
       padding: 10px;
-      border-radius: 5px;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       overflow-x: auto;
     }
     table {
@@ -446,6 +607,59 @@
       margin-bottom: 30px;
     }
   </style>
+
+<style>
+  body {
+    background: url('https://i.pinimg.com/originals/7d/8f/e3/7d8fe3ae13b44d9a6fa487b6b7082d5e.jpg') center/cover no-repeat fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .music-note {
+    position: fixed;
+    font-size: 24px;
+    animation: flyUp 5s linear infinite;
+    color: #f06292;
+    opacity: 0.8;
+  }
+
+  @keyframes flyUp {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0.5; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+  }
+
+  /* Side menu moe style */
+  .side-menu {
+    background-color: #ffe3ec;
+    color: #5c1a38;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-menu a {
+    color: #d81b60;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .side-menu a:hover {
+    color: #880e4f;
+    transform: scale(1.05);
+  }
+</style>
+<script>
+  // Generate flying notes
+  setInterval(() => {
+    const note = document.createElement('div');
+    note.className = 'music-note';
+    note.innerText = '♪';
+    note.style.left = Math.random() * 100 + 'vw';
+    note.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 5000);
+  }, 600);
+</script>
+
 </head>
 <body>
   <h1>Bài giảng 4: Cácc Bấm Hợp Âm và Các Thế Bấm</h1>
@@ -596,6 +810,59 @@ E|---X---
       margin: 15px 0;
     }
   </style>
+
+<style>
+  body {
+    background: url('https://i.pinimg.com/originals/7d/8f/e3/7d8fe3ae13b44d9a6fa487b6b7082d5e.jpg') center/cover no-repeat fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .music-note {
+    position: fixed;
+    font-size: 24px;
+    animation: flyUp 5s linear infinite;
+    color: #f06292;
+    opacity: 0.8;
+  }
+
+  @keyframes flyUp {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0.5; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+  }
+
+  /* Side menu moe style */
+  .side-menu {
+    background-color: #ffe3ec;
+    color: #5c1a38;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-menu a {
+    color: #d81b60;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .side-menu a:hover {
+    color: #880e4f;
+    transform: scale(1.05);
+  }
+</style>
+<script>
+  // Generate flying notes
+  setInterval(() => {
+    const note = document.createElement('div');
+    note.className = 'music-note';
+    note.innerText = '♪';
+    note.style.left = Math.random() * 100 + 'vw';
+    note.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 5000);
+  }, 600);
+</script>
+
 </head>
 <body>
 
@@ -635,7 +902,7 @@ E|---X---
 <span class="back-btn" onclick="showPage('class')">← Trở về danh sách</span>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       background: #f9f9f9;
       color: #333;
       padding: 40px;
@@ -664,6 +931,59 @@ E|---X---
       margin-left: 25px;
     }
   </style>
+
+<style>
+  body {
+    background: url('https://i.pinimg.com/originals/7d/8f/e3/7d8fe3ae13b44d9a6fa487b6b7082d5e.jpg') center/cover no-repeat fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .music-note {
+    position: fixed;
+    font-size: 24px;
+    animation: flyUp 5s linear infinite;
+    color: #f06292;
+    opacity: 0.8;
+  }
+
+  @keyframes flyUp {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0.5; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+  }
+
+  /* Side menu moe style */
+  .side-menu {
+    background-color: #ffe3ec;
+    color: #5c1a38;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-menu a {
+    color: #d81b60;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .side-menu a:hover {
+    color: #880e4f;
+    transform: scale(1.05);
+  }
+</style>
+<script>
+  // Generate flying notes
+  setInterval(() => {
+    const note = document.createElement('div');
+    note.className = 'music-note';
+    note.innerText = '♪';
+    note.style.left = Math.random() * 100 + 'vw';
+    note.style.animationDuration = (3 + Math.random() * 3) + 's';
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 5000);
+  }, 600);
+</script>
+
 </head>
 <body>
 
